@@ -1,15 +1,38 @@
 let avvioForm = document.querySelector("#avvio_form");
 
+const nomeCognomeScelti = "";
+
+const kmScelti = "";
+
 avvioForm.addEventListener("click",
     function () {
+        const nomeCognome = document.getElementById("nome_cognome");
+        const nomeCognomeScelti = nomeCognome.value;
+        console.log(nomeCognomeScelti)
+
         const kmPercorrere = document.getElementById("km_da_percorre");
         const kmScelti = kmPercorrere.value;
-        alert(kmScelti);
+        console.log(kmScelti)
+
     }
 );
 
+console.log(nomeCognomeScelti)
+console.log(kmScelti)
 
-const resetForm = document.querySelector('#resetta_form');
+
+const resetForm = document.querySelector('#reset_form');
+
+resetForm.addEventListener('click', 
+    function () {
+        const nomeCognome = document.getElementById("nome_cognome");
+        nomeCognome.value ="";
+
+
+        const kmPercorrere = document.getElementById("km_da_percorre");
+        kmPercorrere.value="";
+    }
+);
 /*
 let prezzo = km * 0.21;
 
