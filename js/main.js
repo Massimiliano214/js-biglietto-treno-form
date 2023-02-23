@@ -2,7 +2,7 @@ let avvioForm = document.querySelector("#avvio_form");
 
 avvioForm.addEventListener("click",
     function () {
-        const kmPercorrere = document.getElementById("#km_da_percorre");
+        const kmPercorrere = document.getElementById("km_da_percorre");
         const kmScelti = kmPercorrere.value;
         alert(kmScelti);
     }
