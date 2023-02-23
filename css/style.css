@@ -4,9 +4,26 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: brown;
+}
+
 .d-flex {
     display: flex;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.mezzo {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
 
 .d-none {
     display: none;
@@ -14,6 +31,7 @@
 .biglietto {
     max-width: 1170px;
     margin: 50px auto;
+    background-color: palegoldenrod;
 }
 
 .dati_passeggero {
