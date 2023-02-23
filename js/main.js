@@ -23,8 +23,8 @@ avvioForm.addEventListener("click",
     }
 );
 
-console.log(nomeCognomeScelti)
-console.log(kmScelti)
+alert(nomeCognomeScelti);
+alert(kmScelti);
 
 
 const resetForm = document.querySelector('#reset_form');
