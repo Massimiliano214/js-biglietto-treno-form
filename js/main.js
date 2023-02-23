@@ -4,15 +4,21 @@ const nomeCognomeScelti = "";
 
 const kmScelti = "";
 
+const etaSelezionata ="";
+
 avvioForm.addEventListener("click",
     function () {
         const nomeCognome = document.getElementById("nome_cognome");
-        const nomeCognomeScelti = nomeCognome.value;
-        console.log(nomeCognomeScelti)
+        nomeCognomeScelti = nomeCognome.value;
+        console.log(nomeCognomeScelti);
 
         const kmPercorrere = document.getElementById("km_da_percorre");
-        const kmScelti = kmPercorrere.value;
-        console.log(kmScelti)
+        kmScelti = kmPercorrere.value;
+        console.log(kmScelti);
+
+        const selettoreEta = document.getElementById("selettore_eta");
+        etaSelezionata = selettoreEta.value;
+        console.log(etaSelezionata);
 
     }
 );
@@ -26,11 +32,14 @@ const resetForm = document.querySelector('#reset_form');
 resetForm.addEventListener('click', 
     function () {
         const nomeCognome = document.getElementById("nome_cognome");
-        nomeCognome.value ="";
+        nomeCognome.value = "";
 
 
         const kmPercorrere = document.getElementById("km_da_percorre");
-        kmPercorrere.value="";
+        kmPercorrere.value = "";
+
+        const selettoreEta = document.getElementById("selettore_eta");
+        selettoreEta.value = "";
     }
 );
 /*
