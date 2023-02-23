@@ -14,20 +14,22 @@
         <label for="km">Km da percorrere</label>
         <input id="km_da_percorre" type="number"/>
         <select name="selettore_eta" id="selettore_eta">
-            <option value="maggiorenne">Maggiorenne</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="maggiore65">Età +65</option>
+            <option value="18">Maggiorenne</option>
+            <option id="minorenne" value="17">Minorenne</option>
+            <option id="maggiore65" value="66">Età +65</option>
         </select>
-        <button id="avvio_form">Genera</button>
-        <button id="reset_form">Annulla</button>
+        
     </form>
+
+    <button id="avvio_form">Genera</button>
+    <button id="reset_form">Annulla</button>
 
     <div class="biglietto">
         <div class="dati_passeggero">
             <h3>NOME PASSEGGERO</h3>
         </div>
         <div class="altri_dati">
-            <div>Offetta</div>
+            <div>Offetta: <span id="prezzoTreno"></span></div>
             <div>Carrozza</div>
             <div>Codice CP</div>
             <div>Costo Biglietto</div>

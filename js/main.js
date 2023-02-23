@@ -1,30 +1,61 @@
 let avvioForm = document.querySelector("#avvio_form");
 
-const nomeCognomeScelti = "";
-
-const kmScelti = "";
-
-const etaSelezionata ="";
 
 avvioForm.addEventListener("click",
     function () {
         const nomeCognome = document.getElementById("nome_cognome");
-        nomeCognomeScelti = nomeCognome.value;
+        const nomeCognomeScelti = nomeCognome.value;
         console.log(nomeCognomeScelti);
 
         const kmPercorrere = document.getElementById("km_da_percorre");
-        kmScelti = kmPercorrere.value;
+        const kmScelti = kmPercorrere.value;
         console.log(kmScelti);
 
         const selettoreEta = document.getElementById("selettore_eta");
-        etaSelezionata = selettoreEta.value;
+        const etaSelezionata = selettoreEta.value;
         console.log(etaSelezionata);
 
+        let prezzo = kmScelti * 0.21;
+
+        console.log (prezzo);
+
+        const minorenne = 18;
+        const maggiore65 = 65;
+
+        if (etaSelezionata > maggiore65) {
+            prezzo = prezzo - ((prezzo * 40) / 100);
+        } else if (etaSelezionata < minorenne) {
+            prezzo = prezzo - ((prezzo * 20) / 100);
+        }
+
+        console.log(prezzo);
+        console.log(prezzo.toFixed(2));
+
+        if (etaSelezionata == maggiore65) {
+            document.getElementById("prezzoTreno").innerHTML = 
+            `
+                Hai uno sconto del 40%:
+                ${prezzo.toFixed(2)}
+                $
+            `;
+        } else if (etaSelezionata == minorenne) {
+            document.getElementById("prezzoTreno").innerHTML = 
+            `
+                Hai uno sconto del 20%:
+                ${prezzo.toFixed(2)}
+                $
+            `;
+        } else {
+            document.getElementById("prezzoTreno").innerHTML = 
+            `
+                ${prezzo.toFixed(2)}
+                $
+            `;
+        }
     }
+    
 );
 
-alert(nomeCognomeScelti);
-alert(kmScelti);
 
 
 const resetForm = document.querySelector('#reset_form');
@@ -42,44 +73,6 @@ resetForm.addEventListener('click',
         selettoreEta.value = "";
     }
 );
-/*
-let prezzo = km * 0.21;
 
-console.log (prezzo);
 
-if ((isNaN(km)) || (isNaN(eta))) {
-    document.getElementById("prezzoTreno").innerHTML = "Hai digitato incorrettamente";
-} else {
-    if (eta > 65) {
-        prezzo = prezzo - ((prezzo * 40) / 100);
-    } else if (eta < 18) {
-        prezzo = prezzo - ((prezzo * 20) / 100);
-    }
-    
-    console.log(prezzo);
-    console.log(prezzo.toFixed(2));
-    
-    if (eta > 65) {
-        document.getElementById("prezzoTreno").innerHTML = 
-        `
-            Hai uno sconto del 40%:
-            ${prezzo.toFixed(2)}
-            $
-        `;
-    } else if (eta < 18) {
-        document.getElementById("prezzoTreno").innerHTML = 
-        `
-            Hai uno sconto del 20%:
-            ${prezzo.toFixed(2)}
-            $
-        `;
-    } else {
-        document.getElementById("prezzoTreno").innerHTML = 
-        `
-            ${prezzo.toFixed(2)}
-            $
-        `;
-    }
-}
 
-*/
