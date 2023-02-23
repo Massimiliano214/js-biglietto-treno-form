@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
 .biglietto {
     max-width: 1170px;
-    display: flex;
     margin: 50px auto;
 }
 

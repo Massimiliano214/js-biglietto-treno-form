@@ -15,6 +15,12 @@ avvioForm.addEventListener("click",
         const etaSelezionata = selettoreEta.value;
         console.log(etaSelezionata);
 
+        let visibilita = document.getElementById("ticket");
+         visibilita.classList.add("d-flex");
+         visibilita.classList.remove("d-none");
+
+        document.getElementById("nome_cog").innerHTML = nomeCognomeScelti;
+
         let prezzo = kmScelti * 0.21;
 
         console.log (prezzo);
@@ -31,25 +37,41 @@ avvioForm.addEventListener("click",
         console.log(prezzo);
         console.log(prezzo.toFixed(2));
 
-        if (etaSelezionata == maggiore65) {
+        if (etaSelezionata > maggiore65) {
             document.getElementById("prezzoTreno").innerHTML = 
             `
-                Hai uno sconto del 40%:
+                
                 ${prezzo.toFixed(2)}
                 $
             `;
-        } else if (etaSelezionata == minorenne) {
+
+            document.getElementById("tipo_biglietto").innerHTML = 
+            `
+                Biglietto Super Scontato
+            `;
+        } else if (etaSelezionata < minorenne) {
             document.getElementById("prezzoTreno").innerHTML = 
             `
-                Hai uno sconto del 20%:
+                
                 ${prezzo.toFixed(2)}
                 $
             `;
+
+            document.getElementById("tipo_biglietto").innerHTML = 
+            `
+                Biglietto Scontato
+            `;
+
         } else {
             document.getElementById("prezzoTreno").innerHTML = 
             `
                 ${prezzo.toFixed(2)}
                 $
+            `;
+
+            document.getElementById("tipo_biglietto").innerHTML = 
+            `
+                Biglietto Standard
             `;
         }
     }
@@ -74,5 +96,10 @@ resetForm.addEventListener('click',
     }
 );
 
+const numeroCarrozza = Math.floor((Math.random() * 9)) + 1;
 
+document.getElementById("numero_carrozza").innerHTML = numeroCarrozza;
 
+const codiceCP = Math.floor((Math.random() * 999)) + 9000;
+
+document.getElementById("codice_cp").innerHTML = codiceCP;
