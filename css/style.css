@@ -4,3 +4,20 @@
     box-sizing: border-box;
 }
 
+.biglietto {
+    max-width: 1170px;
+    display: flex;
+    margin: 50px auto;
+}
+
+.dati_passeggero {
+    background-color: gray;
+    
+    width: 30%;
+}
+
+.altri_dati {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
