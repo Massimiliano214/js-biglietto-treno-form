@@ -92,7 +92,11 @@ resetForm.addEventListener('click',
         kmPercorrere.value = "";
 
         const selettoreEta = document.getElementById("selettore_eta");
-        selettoreEta.value = "";
+        selettoreEta.value = "18";
+
+        let visibilita = document.getElementById("ticket");
+         visibilita.classList.add("d-none");
+         
     }
 );
 
